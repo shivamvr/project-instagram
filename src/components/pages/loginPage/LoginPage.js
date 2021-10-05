@@ -1,6 +1,7 @@
 import React, { useState,useEffect } from 'react'
 import styled from 'styled-components'
 import LoginForm from './components/LoginForm'
+import SignupForm from './components/SignupForm'
 const LoginPage = () => {
     const images = ['screen', 'screen1', 'screen2']
     const [currentImg, setCurrentImg] = useState(0)
@@ -29,6 +30,7 @@ const LoginPage = () => {
 
         <div className="right-side">
           <LoginForm/>
+          {/* <SignupForm/> */}
           <StoreBtns>
             Get the app.
             <div>
