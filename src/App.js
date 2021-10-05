@@ -5,8 +5,8 @@ import LoginPage from './components/pages/loginPage/LoginPage'
 const App = () => {
   return (
     <div>
-      <LoginPage/>
       <HomePage/>
+      <LoginPage/>
     </div>
   )
 }
