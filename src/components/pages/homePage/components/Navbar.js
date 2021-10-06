@@ -20,6 +20,7 @@ const Navbar = () => {
 
   return (
     <StyledNav>
+      <div>
       <Logo>
         <img src="/image/logo.png" alt="" />
       </Logo>
@@ -40,7 +41,7 @@ const Navbar = () => {
             <SearchResult />
           </>
         )}
-        
+
       </SearchBar>
 
       <StlyedList>
@@ -53,18 +54,26 @@ const Navbar = () => {
           <img src="/image/avatar.jpg" alt="" />
         </Avatar>
       </StlyedList>
+      </div>
     </StyledNav>
   )
 }
 const StyledNav = styled.div`
-  width: 100%;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  border: solid #ccc 1px;
-  padding: 0.4rem 0;
-  & > div {
-    /* border: solid springgreen 2px; */
+ width: 100%;
+ height: 56px;
+ &>div{
+   z-index: 10;
+   position: fixed;
+   width: 100%;
+   display: flex;
+   justify-content: space-evenly;
+   align-items: center;
+   border: solid #ccc 1px;
+   background: #fff;
+   padding: 0.4rem 0;
+   & > div {
+     /* border: solid springgreen 2px; */
+    }
   }
 `
 const Logo = styled.div`

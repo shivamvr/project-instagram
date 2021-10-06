@@ -1,12 +1,15 @@
 import React from 'react'
 import styled from 'styled-components'
+import Post from './Post'
 import Stories from './Stories'
 
 const RightPart = () => {
     return (
         <StyledRight>
             <Stories/>
-            
+            <Post/>
+            <Post/>
+            <Post/>
         </StyledRight>
     )
 }
