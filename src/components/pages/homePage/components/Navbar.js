@@ -1,10 +1,23 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import home from '../../../../../src/svg/home.svg'
 import activity from '../../../../../src/svg/heart.svg'
 import explore from '../../../../../src/svg/explore.svg'
 import chat from '../../../../../src/svg/chat.svg'
+import SearchResult from './SearchResult'
+
 const Navbar = () => {
+  // State
+  const [searchResultShow, setSearchResultShow] = useState(false)
+
+  // Handler
+  const inputFocusHandler = () => {
+    setSearchResultShow(true)
+  }
+  const inputBlurHandler = () => {
+    setSearchResultShow(false)
+  }
+
   return (
     <StyledNav>
       <Logo>
@@ -12,11 +25,25 @@ const Navbar = () => {
       </Logo>
 
       <SearchBar>
-        <input type="text" placeholder='&#61442; search' />
+        <input
+          onFocus={inputFocusHandler}
+          onBlur={inputBlurHandler}
+          type="text"
+          placeholder="&#61442; Search"
+        />
+
+        {searchResultShow && (
+          <>
+            <UpTriangle>
+              <div></div>
+            </UpTriangle>
+            <SearchResult />
+          </>
+        )}
+        
       </SearchBar>
 
       <StlyedList>
-
         <img src={home} alt="" />
         <img src={chat} alt="" />
         <img src={explore} alt="" />
@@ -25,9 +52,7 @@ const Navbar = () => {
         <Avatar>
           <img src="/image/avatar.jpg" alt="" />
         </Avatar>
-
       </StlyedList>
-
     </StyledNav>
   )
 }
@@ -36,29 +61,44 @@ const StyledNav = styled.div`
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  border: solid;
+  border: solid #ccc 1px;
+  padding: 0.4rem 0;
   & > div {
-    border: solid springgreen 2px;
+    /* border: solid springgreen 2px; */
   }
 `
 const Logo = styled.div`
-  width: 136px;
+  width: 104px;
+  margin-top: 0.5rem;
   & > img {
     width: 100%;
   }
 `
 const SearchBar = styled.div`
+  position: relative;
   height: 30px;
   width: 215px;
-  
+
   & > input {
-    padding: .3rem;
+    padding-left: 1.5rem;
     width: 100%;
-    height: 100%auto;
-    border: pink 1px solid;
+    height: 100%;
+    background: #fafafa;
+    border: #e1e1e1 1px solid;
+    border-radius: 0.2rem;
     color: #333;
     width: 100%;
     outline: none;
+    font-size: 100%;
+    font-weight: 400;
+    font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans',
+      'Helvetica Neue', sans-serif;
+    &::placeholder {
+      color: #8e8e8e;
+      font-family: FontAwesome;
+      text-align: center;
+      font-size: 85%;
+    }
   }
 `
 const StlyedList = styled.div`
@@ -67,17 +107,32 @@ const StlyedList = styled.div`
   align-items: center;
   justify-content: space-evenly;
   width: 260px;
-  &>img{
-   border: solid;
-   width: 1.7rem;
+  & > img {
+    /* border: solid; */
+    width: 1.7rem;
   }
 `
 const Avatar = styled.span`
   width: 1.7rem;
-  border: springgreen solid;
+  /* border: springgreen solid; */
   & > img {
     border-radius: 50%;
     width: 100%;
+  }
+`
+const UpTriangle = styled.div`
+  width: 100%;
+  height: 100%;
+  position: relative;
+  & > div {
+    position: absolute;
+    z-index: 0;
+    top: 5px;
+    left: 90px;
+    width: 20px;
+    height: 20px;
+    background: #ccc;
+    transform: rotate(45deg);
   }
 `
 
