@@ -21,5 +21,6 @@ display: flex;
 background: #fff;
 border-radius: .3rem;
 border: solid 2px #ccc;
+margin-top: 2rem;
 `
 export default Stories

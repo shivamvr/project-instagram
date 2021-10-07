@@ -91,7 +91,7 @@ const StyledUserBar = styled.div`
   .option {
     margin: auto 0;
     margin-right: 0.6rem;
-    width: 2rem;
+    width: 1.6rem;
     & > img {
       width: 100%;
     }
@@ -112,16 +112,17 @@ const PostReaction = styled.div`
   align-items: center;
   border: solid #ccc 1px;
   padding: 1rem;
+  margin-top: .4rem;
   & > div {
-    border: solid;
+    /* border: solid; */
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
-    width: 8rem;
-    height: 2rem;
+    width: 7rem;
+    height: 24px;
   }
   & > div + div {
-    width: 2rem;
+    width: 24px;
   }
   & > div > img {
     height: 100%;
@@ -168,12 +169,11 @@ const PostComment = styled.div`
   border: solid #ccc 1px;
   justify-content: space-between;
   align-items: center;
-  padding: 0 0.5rem;
+  padding: 0 0.8rem;
   & > div {
-    width: 2rem;
+    width: 24px;
   }
   & > div > img {
-    border: solid red 2px;
     width: 100%;
   }
   & > input {

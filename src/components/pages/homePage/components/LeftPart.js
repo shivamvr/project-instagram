@@ -1,11 +1,15 @@
 import React from 'react'
 import styled from 'styled-components'
-
+import Suggestions from './Suggestions'
+import LoggedProfile from './LoggedProfile'
+import Footer from './Footer'
 const LeftPart = () => {
     return (
         <StyledLeft>
             <div>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum laboriosam eligendi unde quibusdam. Rem nihil magnam ipsam unde velit, culpa nemo error esse, eaque distinctio sequi, quo modi dolorum eius.
+            <LoggedProfile/>
+            <Suggestions/>
+            <Footer/>
             </div>
         </StyledLeft>
     )
@@ -17,13 +21,16 @@ min-height: 600px;
 height: 90vh;
 background: pink;
 position: relative;
+margin-left: 2rem;
 
 &>div{
+    margin-top: 2.5rem;
     background: #fff;
     position: fixed;
     border: .4rem solid;
     width: 330px;
     height: 90vh;
+    padding:  0 .3rem;
 }
 
 `
