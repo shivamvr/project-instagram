@@ -21,7 +21,7 @@ min-height: 600px;
 height: 90vh;
 background: pink;
 position: relative;
-margin-left: 2rem;
+margin-left: 1rem;
 
 &>div{
     margin-top: 2.5rem;

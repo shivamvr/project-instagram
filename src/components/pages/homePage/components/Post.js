@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import more from './../../../../svg/more.svg'
 import smile from './../../../../svg/smile.svg'
@@ -7,13 +7,28 @@ import like from './../../../../svg/heart.svg'
 import message from './../../../../svg/message.svg'
 import share from './../../../../svg/chat.svg'
 
-const Post = () => {
+const Post = ({data}) => {
+  const {image,text,userId} = data
+  // State 
+  const[user,setUser]= useState({})
+ 
+  const getUser = async () => {
+    let url = `http://localhost:3001/users?id=${userId}`
+    const res = await fetch(url)
+    const resUser = await res.json()
+    setUser(resUser[0])
+  }
+
+  useEffect(()=>{
+    getUser()
+  },[])
+  
   return (
     <StyledPost>
       <StyledUserBar>
         <div className="userBox">
-          <img src="/image/avatar.jpg" alt="" />
-          <p>care_one_no</p>
+          <img src={user.avatar} alt="" />
+          <p>{user.name}</p>
         </div>
         <div className="option">
           <img src={more} alt="" />
@@ -21,7 +36,7 @@ const Post = () => {
       </StyledUserBar>
 
       <PostImage>
-        <img src="/image/image.jpg" alt="" />
+        <img src={image} alt="" />
       </PostImage>
 
       <PostReaction>
@@ -39,7 +54,7 @@ const Post = () => {
       <PostInfo>
         <div className="post-likes">5,034 likes</div>
         <div className="post-text">
-          cares_one_no <span>Don't worry!</span>
+          cares_one_no <span>{text}</span>
         </div>
         <div className="post-comments">View all 30 comments</div>
         <div className="post-time">5 hours ago</div>
@@ -102,6 +117,8 @@ const PostImage = styled.div`
   height: 740px;
   & > img {
     width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 `
 const PostReaction = styled.div`

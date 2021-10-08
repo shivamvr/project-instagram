@@ -13,7 +13,8 @@ const Story = () => {
 }
 
 const StyledStory = styled.div`
-width: 82px;
+width: 80px;
+height: 85px;
 border: solid 1px #000;
 display: flex;
 flex-direction: column;
@@ -22,13 +23,13 @@ align-items: center;
 &>p{
     color: #262626;
     font-weight: 400;
-    font-size: 75%;
+    font-size: 12px;
 }
 
 `
 const ColorBorder = styled.div`
- width: 66px;
- height: 66px;
+ width: 64px;
+ height: 64px;
  border: pink;
  display: flex;
  background: linear-gradient(to right, #C53293, #F99C4B);
