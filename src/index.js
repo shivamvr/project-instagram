@@ -8,7 +8,7 @@ import reducer from './reducers/auth'
 import {createStore} from 'redux'
 import {Provider} from 'react-redux'
 
-const store = createStore(reducer)
+const store = createStore(reducer,window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
 
 ReactDOM.render(
   <React.StrictMode>

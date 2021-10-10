@@ -4,11 +4,14 @@ import home from '../../../../../src/svg/home.svg'
 import activity from '../../../../../src/svg/heart.svg'
 import explore from '../../../../../src/svg/explore.svg'
 import chat from '../../../../../src/svg/chat.svg'
+import camera from '../../../../../src/svg/camera.svg'
 import SearchResult from './SearchResult'
+import CreatePostModal from './CreatePostModal'
 
 const Navbar = () => {
   // State
   const [searchResultShow, setSearchResultShow] = useState(false)
+  const [modalVisibility, setModalVisibility] =  useState(false)
 
   // Handler
   const inputFocusHandler = () => {
@@ -19,6 +22,7 @@ const Navbar = () => {
   }
 
   return (
+    <>
     <StyledNav>
       <div>
       <Logo>
@@ -46,16 +50,18 @@ const Navbar = () => {
 
       <StlyedList>
         <img src={home} alt="" />
+        <img onClick={()=> setModalVisibility(!modalVisibility)} src={camera} alt="" />
         <img src={chat} alt="" />
         <img src={explore} alt="" />
         <img src={activity} alt="" />
-
         <Avatar>
           <img src="/image/avatar.jpg" alt="" />
         </Avatar>
       </StlyedList>
       </div>
     </StyledNav>
+      {modalVisibility && <CreatePostModal modalVisibility={modalVisibility} setModalVisibility={setModalVisibility}/>}
+    </>
   )
 }
 const StyledNav = styled.div`
@@ -119,6 +125,7 @@ const StlyedList = styled.div`
   & > img {
     /* border: solid; */
     width: 1.7rem;
+    cursor: pointer;
   }
 `
 const Avatar = styled.span`

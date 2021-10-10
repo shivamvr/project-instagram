@@ -23,7 +23,7 @@ const RightPart = () => {
     return (
         <StyledRight>
             <Stories/>
-            {posts.map(post=> <Post data={post}/>)}
+            {posts.map(post=> <Post key={post.id} data={post}/>)}
         </StyledRight>
     )
 }

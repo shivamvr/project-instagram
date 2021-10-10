@@ -1,8 +1,16 @@
 import React from 'react'
+import { useDispatch} from 'react-redux'
 import styled from 'styled-components'
 import { AiFillFacebook } from 'react-icons/ai'
-
+// Actions
+import login from '../../../../actions/login'
 const LoginForm = () => {
+
+  const dispatch = useDispatch()
+  const logInHandler = () => {
+      dispatch(login())
+  }
+  
     return (
         <>
             <StyledForm>
@@ -11,7 +19,7 @@ const LoginForm = () => {
             </Logo>
             <input type="text" placeholder="Phone number, username, or email" />
             <input type="password" placeholder="Password" />
-            <button>Log In</button>
+            <button onClick={logInHandler}>Log In</button>
             <StyledOr>
               <div></div>
               <p> or</p>

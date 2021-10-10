@@ -80,7 +80,7 @@ const StyledPost = styled.div`
 
 const StyledUserBar = styled.div`
   width: 100%;
-  height: 55px;
+  height: 65px;
   display: flex;
   justify-content: space-between;
   border: solid 1px #ccc;
@@ -88,11 +88,14 @@ const StyledUserBar = styled.div`
 
   .userBox {
     display: flex;
-    width: 50px;
+    width: 145px;
     align-items: center;
-    padding: 0 0.5rem;
+    justify-content: space-evenly;
+
     & > img {
-      width: 100%;
+      width: 35px;
+      height: 35px;
+      object-fit: cover;
       border-radius: 50%;
     }
     & > p {
