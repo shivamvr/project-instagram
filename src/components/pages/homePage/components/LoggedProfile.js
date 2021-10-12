@@ -1,17 +1,19 @@
 import React from 'react'
 import styled from 'styled-components'
+import { useSelector } from 'react-redux'
 
 const LoggedProfile = () => {
+  const user = useSelector(state => state.user)
   return (
     <StyledProfile>
       <Left>
         <div>
-          <img src="/image/avatar.jpg" alt="" />
+          <img src={user.avatar} alt="" />
         </div>
 
         <div>
-          shivam_verma__
-          <p>Shivam</p>
+          {user.userName}
+          <p>{user.name}</p>
         </div>
 
       </Left>
@@ -39,6 +41,7 @@ align-items: center;
     &>img{
         object-fit: cover;
         width: 100%;
+        height: 100%;
         border-radius: 50%;
     }
 }

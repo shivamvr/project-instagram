@@ -7,8 +7,11 @@ import chat from '../../../../../src/svg/chat.svg'
 import camera from '../../../../../src/svg/camera.svg'
 import SearchResult from './SearchResult'
 import CreatePostModal from './CreatePostModal'
-
+// Redux
+import { useSelector } from 'react-redux'
 const Navbar = () => {
+  // User 
+  const user = useSelector(state => state.user)
   // State
   const [searchResultShow, setSearchResultShow] = useState(false)
   const [modalVisibility, setModalVisibility] =  useState(false)
@@ -55,7 +58,7 @@ const Navbar = () => {
         <img src={explore} alt="" />
         <img src={activity} alt="" />
         <Avatar>
-          <img src="/image/avatar.jpg" alt="" />
+          <img src={user.avatar} alt="" />
         </Avatar>
       </StlyedList>
       </div>
@@ -129,11 +132,14 @@ const StlyedList = styled.div`
   }
 `
 const Avatar = styled.span`
-  width: 1.7rem;
+  width: 30px;
+  height: 30px;
   /* border: springgreen solid; */
   & > img {
     border-radius: 50%;
     width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 `
 const UpTriangle = styled.div`

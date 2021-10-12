@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState} from 'react'
 import { useDispatch} from 'react-redux'
 import styled from 'styled-components'
 import { AiFillFacebook } from 'react-icons/ai'
@@ -6,9 +6,40 @@ import { AiFillFacebook } from 'react-icons/ai'
 import login from '../../../../actions/login'
 const LoginForm = () => {
 
+  // States
+
+  const[userName,setUserName] = useState('')
+  const[password,setPassword] = useState('')
+ 
+  
   const dispatch = useDispatch()
-  const logInHandler = () => {
-      dispatch(login())
+  
+  
+  // Fecthing Users 
+  
+  const getUser = async (enteredEmail,enteredPassword) => {
+    let url = `http://localhost:3001/users?email=${enteredEmail}&password=${enteredPassword}`
+    const res = await fetch(url)
+    const resUser = await res.json()
+    return await resUser[0]
+  }
+  
+  const logInHandler = async() => {
+    const auth = await getUser(userName,password)
+    if(auth){
+      dispatch(login(auth))
+    }else{
+      alert('email and password not match')
+    }
+  }
+
+  // Handlers
+  const userNameHandler = (e) => {
+    setUserName(e.target.value)
+  }
+
+  const  passwordHandler= (e) => {
+    setPassword(e.target.value)
   }
   
     return (
@@ -17,8 +48,8 @@ const LoginForm = () => {
             <Logo>
               <img src="/image/logo.png" alt="" />
             </Logo>
-            <input type="text" placeholder="Phone number, username, or email" />
-            <input type="password" placeholder="Password" />
+            <input onChange={userNameHandler} value={userName} type="text" placeholder="Phone number, username, or email" />
+            <input onChange={passwordHandler} value={password} type="password" placeholder="Password" />
             <button onClick={logInHandler}>Log In</button>
             <StyledOr>
               <div></div>
