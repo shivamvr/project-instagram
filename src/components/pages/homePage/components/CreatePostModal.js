@@ -30,7 +30,18 @@ const CreatePostModal = ({ modalVisibility, setModalVisibility }) => {
 
 // Create Post
   const submitHandler = async() => {
-    
+    const post ={
+        image: imageLink,
+        text: caption,
+        userId: user.id,
+        id: uuid()
+    }
+    await fetch('http://localhost:3001/posts',{
+        method: 'POST',
+        body: JSON.stringify(post),
+        headers: {'Content-Type': 'application/Json'}
+    })
+      setModalVisibility(false)
     
   }
 
