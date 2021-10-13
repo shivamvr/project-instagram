@@ -2,6 +2,8 @@ import React,{useState} from 'react'
 import { useDispatch} from 'react-redux'
 import styled from 'styled-components'
 import { AiFillFacebook } from 'react-icons/ai'
+import { saveLoginDetail } from '../../../utils'
+import { getUser } from '../../../utils'
 // Actions
 import login from '../../../../actions/login'
 const LoginForm = () => {
@@ -15,18 +17,10 @@ const LoginForm = () => {
   const dispatch = useDispatch()
   
   
-  // Fecthing Users 
-  
-  const getUser = async (enteredEmail,enteredPassword) => {
-    let url = `http://localhost:3001/users?email=${enteredEmail}&password=${enteredPassword}`
-    const res = await fetch(url)
-    const resUser = await res.json()
-    return await resUser[0]
-  }
-  
   const logInHandler = async() => {
     const auth = await getUser(userName,password)
     if(auth){
+      saveLoginDetail(auth)
       dispatch(login(auth))
     }else{
       alert('email and password not match')

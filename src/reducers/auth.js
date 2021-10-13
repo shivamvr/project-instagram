@@ -1,7 +1,10 @@
+import { getDetail } from "../components/utils"
+
+const localUser = getDetail('detail')
 
 const initialState = {
-    isAuth: false,
-    user: {}
+    isAuth: localUser ? true : false,
+    user: localUser || {}
 }
 
 const auth = (state = initialState, action)=>

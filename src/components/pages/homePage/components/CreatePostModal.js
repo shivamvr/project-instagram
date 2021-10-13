@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
-import { v4 as uuid} from 'uuid'
+import { v4 as uuid } from 'uuid'
 
 // Redux
 import { useSelector } from 'react-redux'
@@ -10,7 +10,7 @@ const CreatePostModal = ({ modalVisibility, setModalVisibility }) => {
   const [caption, setCaption] = useState('')
   const [imageLink, setImageLink] = useState('')
   // User
-  const user = useSelector(state => state.user)
+  const user = useSelector((state) => state.user)
   // Handlers
   const exitHandler = (e) => {
     if (e.target.id === 'wraper') {
@@ -21,28 +21,29 @@ const CreatePostModal = ({ modalVisibility, setModalVisibility }) => {
   const captionHandler = (e) => {
     setCaption(e.target.value)
   }
-
+ 
   const imageLinkHandler = (e) => {
     setImageLink(e.target.value)
   }
 
-  
-
-// Create Post
-  const submitHandler = async() => {
-    const post ={
-        image: imageLink,
-        text: caption,
-        userId: user.id,
-        id: uuid()
+  // Create Post
+  const submitHandler = async () => {
+    const post = {
+      image: imageLink,
+      text: caption,
+      userId: user.id,
+      id: uuid(),
     }
-    await fetch('http://localhost:3001/posts',{
+    if (post.image) {
+      await fetch('http://localhost:3001/posts', {
         method: 'POST',
         body: JSON.stringify(post),
-        headers: {'Content-Type': 'application/Json'}
-    })
+        headers: { 'Content-Type': 'application/Json' },
+      })
       setModalVisibility(false)
-    
+    } else {
+      alert('image is required')
+    }
   }
 
   return (
