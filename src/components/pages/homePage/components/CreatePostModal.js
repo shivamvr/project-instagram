@@ -5,7 +5,7 @@ import { v4 as uuid } from 'uuid'
 // Redux
 import { useSelector } from 'react-redux'
 
-const CreatePostModal = ({ modalVisibility, setModalVisibility }) => {
+const CreatePostModal = ({ createClicked, setCreateClicked }) => {
   // State
   const [caption, setCaption] = useState('')
   const [imageLink, setImageLink] = useState('')
@@ -14,7 +14,7 @@ const CreatePostModal = ({ modalVisibility, setModalVisibility }) => {
   // Handlers
   const exitHandler = (e) => {
     if (e.target.id === 'wraper') {
-      setModalVisibility(false)
+      setCreateClicked(false)
     }
   }
 
@@ -40,14 +40,14 @@ const CreatePostModal = ({ modalVisibility, setModalVisibility }) => {
         body: JSON.stringify(post),
         headers: { 'Content-Type': 'application/Json' },
       })
-      setModalVisibility(false)
+      setCreateClicked(false)
     } else {
       alert('image is required')
     }
   }
 
   return (
-    modalVisibility && (
+    createClicked && (
       <StyledModal id="wraper" onClick={exitHandler}>
         <Content>
           <StyledTextArea>

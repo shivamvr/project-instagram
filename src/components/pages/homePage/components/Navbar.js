@@ -7,6 +7,7 @@ import chat from '../../../../../src/svg/chat.svg'
 import camera from '../../../../../src/svg/camera.svg'
 import SearchResult from './SearchResult'
 import CreatePostModal from './CreatePostModal'
+import ProfileOption from './ProfileOption'
 // Redux
 import { useSelector } from 'react-redux'
 const Navbar = () => {
@@ -14,7 +15,8 @@ const Navbar = () => {
   const user = useSelector(state => state.user)
   // State
   const [searchResultShow, setSearchResultShow] = useState(false)
-  const [modalVisibility, setModalVisibility] =  useState(false)
+  const [createClicked, setCreateClicked] =  useState(false)
+  const [profileClicked, setProfileClicked] =  useState(false)
 
   // Handler
   const inputFocusHandler = () => {
@@ -53,17 +55,18 @@ const Navbar = () => {
 
       <StlyedList>
         <img src={home} alt="" />
-        <img onClick={()=> setModalVisibility(!modalVisibility)} src={camera} alt="" />
+        <img onClick={()=> setCreateClicked(!createClicked)} src={camera} alt="" />
         <img src={chat} alt="" />
         <img src={explore} alt="" />
         <img src={activity} alt="" />
         <Avatar>
-          <img src={user.avatar} alt="" />
+          <img onClick={()=> setProfileClicked(!profileClicked)} src={user.avatar} alt="" />
         </Avatar>
       </StlyedList>
       </div>
     </StyledNav>
-      {modalVisibility && <CreatePostModal modalVisibility={modalVisibility} setModalVisibility={setModalVisibility}/>}
+      {createClicked && <CreatePostModal createClicked={createClicked} setCreateClicked={setCreateClicked}/>}
+      {profileClicked && <ProfileOption profileClicked={profileClicked} setProfileClicked={setProfileClicked}/>}
     </>
   )
 }
@@ -112,7 +115,7 @@ const SearchBar = styled.div`
     font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans',
       'Helvetica Neue', sans-serif;
     &::placeholder {
-      color: #8e8e8e;
+      color: #A6A8AB;
       font-family: FontAwesome;
       text-align: center;
       font-size: 85%;
@@ -127,13 +130,14 @@ const StlyedList = styled.div`
   width: 260px;
   & > img {
     /* border: solid; */
-    width: 1.7rem;
+    width: 1.55rem;
     cursor: pointer;
   }
 `
 const Avatar = styled.span`
   width: 30px;
   height: 30px;
+  cursor: pointer;
   /* border: springgreen solid; */
   & > img {
     border-radius: 50%;
