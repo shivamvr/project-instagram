@@ -2,6 +2,7 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import HomePage from './components/pages/homePage/HomePage'
 import LoginPage from './components/pages/loginPage/LoginPage'
+import ProfilePage from './components/pages/profilePage/ProfilePage'
 // import MessagePage from './components/pages/messagePage/MessagePage'
 
 const App = () => {
@@ -10,7 +11,10 @@ const App = () => {
 
   return (
     <div>
-      {isAuth ? <HomePage /> : <LoginPage />}
+      <ProfilePage/>
+
+      {/* {isAuth ? <HomePage /> : <LoginPage />} */}
+
       {/* <MessagePage /> */}
     </div>
   )

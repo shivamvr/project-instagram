@@ -78,19 +78,20 @@ const StyledNav = styled.div`
    position: fixed;
    width: 100%;
    display: flex;
-   justify-content: space-evenly;
    align-items: center;
    border: solid #ccc 1px;
    background: #fff;
-   padding: 0.4rem 0;
+   padding: 0.4rem 3.5rem;
    & > div {
      /* border: solid springgreen 2px; */
     }
+   
   }
 `
 const Logo = styled.div`
-  width: 104px;
+  width: 108px;
   margin-top: 0.5rem;
+  margin-right: 19rem;
   & > img {
     width: 100%;
   }
@@ -99,6 +100,7 @@ const SearchBar = styled.div`
   position: relative;
   height: 30px;
   width: 215px;
+  margin-right: 10rem;
 
   & > input {
     padding-left: 1.5rem;
@@ -123,11 +125,10 @@ const SearchBar = styled.div`
   }
 `
 const StlyedList = styled.div`
-  width: 250px;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  width: 260px;
+  width: 270px;
   & > img {
     /* border: solid; */
     width: 1.55rem;

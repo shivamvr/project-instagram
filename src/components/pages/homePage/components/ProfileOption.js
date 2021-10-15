@@ -66,7 +66,7 @@ const StyledModal = styled.div`
 const Content = styled.div`
   position: absolute;
   top: 56px;
-  right: 160px;
+  right: 100px;
   width: 230px;
   height: 195px;
   display: flex;
