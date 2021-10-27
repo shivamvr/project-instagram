@@ -2,7 +2,7 @@
   "users": [
     {
       "avatar": "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-      "userName": "shivam23",
+      "username": "shivam23",
       "name": "shivam",
       "email": "example@gmail.com",
       "password": "1234",
@@ -10,7 +10,7 @@
     },
     {
       "avatar": "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-      "userName": "shivam24",
+      "username": "shivam24",
       "name": "shivam1",
       "email": "example1@gmail.com",
       "password": "2341",
@@ -18,7 +18,7 @@
     },
     {
       "avatar": "https://images.pexels.com/photos/1040881/pexels-photo-1040881.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-      "userName": "shivam25",
+      "username": "shivam25",
       "name": "shivam2",
       "email": "example2@gmail.com",
       "password": "3412",
@@ -26,7 +26,7 @@
     },
     {
       "avatar": "https://images.pexels.com/photos/3981337/pexels-photo-3981337.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-      "userName": "shivam26",
+      "username": "shivam26",
       "name": "shivam3",
       "email": "example3@gmail.com",
       "password": "4123",

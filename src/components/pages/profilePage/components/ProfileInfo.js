@@ -1,19 +1,35 @@
-import React from 'react'
+import React, { useState,useEffect } from 'react'
 import styled from 'styled-components'
 import more from '../../../../svg/more.svg'
 import arrow from '../../../../svg/arrow.svg'
-const ProfileInfo = () => {
+const ProfileInfo = ({username}) => {
+  const [user,setUser] = useState({})
+  console.log('user:', user)
+
+  const getUser = async() => {
+    const url = `http://localhost:3001/users?username=${username}`
+    const res = await fetch(url)
+    const resUser = await res.json()
+     setUser(resUser[0])
+  }
+
+ useEffect(() => {
+   getUser()
+ }, []) 
+  
   return (
     <StyledProfile>
       <ProfileLeft>
         <Avatar>
-          <img src="/image/avatar.jpg" alt="" />
+          {/* <img src="/image/avatar.jpg" alt="" /> */}
+          <img src={user.avatar} alt="" />
         </Avatar>
       </ProfileLeft>
 
       <ProfileRight>
         <UserBar>
-          <UserName>UsernameLorem</UserName>
+          {/* <UserName>UsernameLorem</UserName> */}
+          <UserName>{user.username}</UserName>
           <ProfileBtns>
             <button>Follow</button>
             <button><img src={arrow} alt="" /></button>
@@ -29,7 +45,7 @@ const ProfileInfo = () => {
           <span> <span>34</span> following</span>
         </UserInfo>
 
-        <Name>Shivam Verma</Name>
+        <Name>{user.name}</Name>
 
         <UserLink>
           <a href="">bit.ly/lorem</a>

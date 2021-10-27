@@ -3,13 +3,15 @@ import ProfileInfo from './components/ProfileInfo'
 import styled from 'styled-components'
 import Navbar from '../homePage/components/Navbar'
 import Posts from './components/Posts'
+import { useParams } from 'react-router'
 
 const ProfilePage = () => {
+    const { username } = useParams();
     return (
         <StyledPage>
-            <Navbar/>
-            <ProfileInfo/>
-            <Posts/>
+            <Navbar />
+            <ProfileInfo username={username}/>
+            <Posts username={username}/>
         </StyledPage>
     )
 }

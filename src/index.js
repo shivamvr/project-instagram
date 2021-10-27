@@ -7,13 +7,17 @@ import reportWebVitals from './reportWebVitals';
 import reducer from './reducers/auth'
 import {createStore} from 'redux'
 import {Provider} from 'react-redux'
+//ROUTER
+import { BrowserRouter } from 'react-router-dom';
 
 const store = createStore(reducer,window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
+    <BrowserRouter>
       <App />
+    </BrowserRouter>
     </Provider>
   </React.StrictMode>,
   document.getElementById('root')

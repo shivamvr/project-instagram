@@ -6,6 +6,8 @@ import save from './../../../../svg/save.svg'
 import like from './../../../../svg/heart.svg'
 import message from './../../../../svg/message.svg'
 import share from './../../../../svg/chat.svg'
+import { Link} from 'react-router-dom'
+
 const Post = ({data}) => {
   const {image,text,userId} = data
   // State 
@@ -27,7 +29,10 @@ const Post = ({data}) => {
       <StyledUserBar>
         <div className="userBox">
           <img src={user.avatar} alt="" />
-          <p>{user.name}</p>
+          {/* <p>{user.name}</p> */}
+          <p>
+           <Link to={`/profile/${user.username}`}>{user.username} </Link>
+          </p>
         </div>
         <div className="option">
           <img src={more} alt="" />
