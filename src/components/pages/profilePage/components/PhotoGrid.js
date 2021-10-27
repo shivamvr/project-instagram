@@ -1,23 +1,27 @@
-import React from 'react'
+import React, { useState,useEffect } from 'react'
 import styled from 'styled-components'
 import Photo from './Photo'
 
 const PhotoGrid = () => {
+       const[posts,setPosts] = useState([])
+
+    // Fecthing Posts 
+
+    const getPost = async () => {
+        let uri = 'http://localhost:3001/posts'
+        const res = await fetch(uri)
+        const resPosts = await res.json()
+        setPosts(resPosts)
+      }
+
+    useEffect(()=>{
+    getPost()
+    },[])
+
     return (
+
         <StyledGrid>
-            <Photo/>
-            <Photo/>
-            <Photo/>
-            <Photo/>
-            <Photo/>
-            <Photo/>
-            <Photo/>
-            <Photo/>
-            <Photo/>
-            <Photo/>
-            <Photo/>
-            <Photo/>
-            <Photo/>
+            {posts.map(post => <Photo key={post.id} post={post}/>)}
         </StyledGrid>
     )
 }

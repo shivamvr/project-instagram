@@ -1,10 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const Photo = () => {
+const Photo = ({post}) => {
     return (
         <StyledPhoto>
-            PHOTO
+            <img src={post.image} alt="" />
         </StyledPhoto>
     )
 }
@@ -16,5 +16,10 @@ display: flex;
 align-items: center;
 justify-content: center;
 color: #333;
+&>img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 `
 export default Photo

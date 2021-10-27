@@ -11,9 +11,9 @@ const App = () => {
 
   return (
     <div>
-      <ProfilePage/>
+      {/* <ProfilePage/> */}
 
-      {/* {isAuth ? <HomePage /> : <LoginPage />} */}
+      {isAuth ? <HomePage /> : <LoginPage />}
 
       {/* <MessagePage /> */}
     </div>

@@ -6,7 +6,6 @@ import save from './../../../../svg/save.svg'
 import like from './../../../../svg/heart.svg'
 import message from './../../../../svg/message.svg'
 import share from './../../../../svg/chat.svg'
-
 const Post = ({data}) => {
   const {image,text,userId} = data
   // State 
@@ -102,8 +101,10 @@ const StyledUserBar = styled.div`
       color: #262626;
       font-weight: 500;
       font-size: 90%;
-      margin-left: 1rem;
       cursor: pointer;
+      &:hover{
+        text-decoration: underline;
+      }
     }
   }
   .option {
