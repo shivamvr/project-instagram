@@ -1,14 +1,14 @@
 import React, { useState,useEffect } from 'react'
 import styled from 'styled-components'
-import Photo from './Photo'
 
-const PhotoGrid = ({userId}) => {
+
+const ExplorePage = () => {
        const[posts,setPosts] = useState([])
 
     // Fecthing Posts 
 
     const getPost = async () => {
-        let uri = `http://localhost:3001/posts?userid=${userId}`
+        let uri = `http://localhost:3001/posts`
         const res = await fetch(uri)
         const resPosts = await res.json()
         setPosts(resPosts)
@@ -19,10 +19,10 @@ const PhotoGrid = ({userId}) => {
     },[])
 
     return (
-
+     <StyledExplore>
         <StyledGrid>
-            {posts.map(post => <Photo key={post.id} post={post}/>)}
         </StyledGrid>
+     </StyledExplore>
     )
 }
 
@@ -39,5 +39,9 @@ grid-gap: 30px;
   height: 295px;
 }
 `
+const StyledExplore = styled.div`
+width: 100%;
+padding: 0 4.5rem;
+`
 
-export default PhotoGrid
+export default ExplorePage

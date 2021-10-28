@@ -2,12 +2,12 @@ import React, { useState,useEffect } from 'react'
 import styled from 'styled-components'
 import more from '../../../../svg/more.svg'
 import arrow from '../../../../svg/arrow.svg'
-const ProfileInfo = ({username}) => {
+const ProfileInfo = ({userId}) => {
   const [user,setUser] = useState({})
   console.log('user:', user)
 
   const getUser = async() => {
-    const url = `http://localhost:3001/users?username=${username}`
+    const url = `http://localhost:3001/users?id=${userId}`
     const res = await fetch(url)
     const resUser = await res.json()
      setUser(resUser[0])

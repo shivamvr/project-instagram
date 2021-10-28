@@ -37,37 +37,37 @@
     {
       "image": "https://images.pexels.com/photos/9303860/pexels-photo-9303860.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
       "text": "lorem one",
-      "userId": "1",
+      "userid": "1",
       "id": "one"
     },
     {
       "image": "https://images.pexels.com/photos/9190637/pexels-photo-9190637.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
       "text": "lorem two",
-      "userId": "2",
+      "userid": "2",
       "id": "two"
     },
     {
       "image": "https://images.pexels.com/photos/2907607/pexels-photo-2907607.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
       "text": "lorem three",
-      "userId": "3",
+      "userid": "3",
       "id": "three"
     },
     {
       "image": "https://images.pexels.com/photos/8167373/pexels-photo-8167373.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
       "text": "lorem four",
-      "userId": "4",
+      "userid": "4",
       "id": "four"
     },
     {
       "image": "https://writestylesonline.com/wp-content/uploads/2018/11/Three-Statistics-That-Will-Make-You-Rethink-Your-Professional-Profile-Picture-1024x1024.jpg",
       "text": "shivam verma",
-      "userId": "1",
+      "userid": "1",
       "id": "ae777ce3-3154-4a59-b118-da92dd795cd8"
     },
     {
       "image": "https://writestylesonline.com/wp-content/uploads/2018/11/Three-Statistics-That-Will-Make-You-Rethink-Your-Professional-Profile-Picture-1024x1024.jpg",
       "text": "slfslf",
-      "userId": "1",
+      "userid": "1",
       "id": "255903cf-8e98-42d6-9911-24bdecdef691"
     }
   ]

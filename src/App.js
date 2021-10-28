@@ -4,16 +4,15 @@ import HomePage from './components/pages/homePage/HomePage'
 import LoginPage from './components/pages/loginPage/LoginPage'
 import Router from './Router'
 import ProfilePage from './components/pages/profilePage/ProfilePage'
+import Navbar from './components/pages/homePage/components/Navbar'
 // import MessagePage from './components/pages/messagePage/MessagePage'
 
 const App = () => {
   const isAuth = useSelector((state) => state.isAuth)
   return (
     <div>
-      {/* <ProfilePage/> */}
+      {isAuth ? <Navbar /> : ''} 
        <Router/> 
-      {/* {isAuth ? <HomePage /> : <LoginPage />}  */}
-      {/* <MessagePage /> */}
     </div>
   )
 }

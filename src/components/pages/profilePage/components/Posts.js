@@ -5,7 +5,7 @@ import grid from '../../../../svg/grid.svg'
 import PhotoGrid from './PhotoGrid'
 import VideoGrid from './VideoGrid'
 
-const Posts = () => {
+const Posts = ({userId}) => {
  const[activeItem,setActiveItem] = useState('photoGrid')
     return (
         <StyledPost>
@@ -18,7 +18,7 @@ const Posts = () => {
                </div>
            </Item>
          {activeItem === 'photoGrid' ? 
-          <PhotoGrid/>:
+          <PhotoGrid userId={userId}/>:
           <VideoGrid/>
          }
         </StyledPost>

@@ -8,6 +8,7 @@ import camera from '../../../../../src/svg/camera.svg'
 import SearchResult from './SearchResult'
 import CreatePostModal from './CreatePostModal'
 import ProfileOption from './ProfileOption'
+import { useHistory } from 'react-router'
 // Redux
 import { useSelector } from 'react-redux'
 const Navbar = () => {
@@ -18,6 +19,8 @@ const Navbar = () => {
   const [createClicked, setCreateClicked] =  useState(false)
   const [profileClicked, setProfileClicked] =  useState(false)
 
+  const history = useHistory()
+
   // Handler
   const inputFocusHandler = () => {
     setSearchResultShow(true)
@@ -25,6 +28,11 @@ const Navbar = () => {
   const inputBlurHandler = () => {
     setSearchResultShow(false)
   }
+
+  const pageHandler = (path) => {
+    history.push(path)
+  }
+  
 
   return (
     <>
@@ -54,11 +62,11 @@ const Navbar = () => {
       </SearchBar>
 
       <StlyedList>
-        <img src={home} alt="" />
-        <img onClick={()=> setCreateClicked(!createClicked)} src={camera} alt="" />
-        <img src={chat} alt="" />
-        <img src={explore} alt="" />
-        <img src={activity} alt="" />
+        <img onClick={()=>pageHandler('/')} src={home} alt="" />
+        <img onClick={()=>pageHandler('')} onClick={()=> setCreateClicked(!createClicked)} src={camera} alt="" />
+        <img onClick={()=>pageHandler('')} src={chat} alt="" />
+        <img onClick={()=>pageHandler('/explore')} src={explore} alt="" />
+        <img onClick={()=>pageHandler('')} src={activity} alt="" />
         <Avatar>
           <img onClick={()=> setProfileClicked(!profileClicked)} src={user.avatar} alt="" />
         </Avatar>

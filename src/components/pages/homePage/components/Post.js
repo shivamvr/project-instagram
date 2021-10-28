@@ -9,12 +9,12 @@ import share from './../../../../svg/chat.svg'
 import { Link} from 'react-router-dom'
 
 const Post = ({data}) => {
-  const {image,text,userId} = data
+  const {image,text,userid} = data
   // State 
   const[user,setUser]= useState({})
  
   const getUser = async () => {
-    let url = `http://localhost:3001/users?id=${userId}`
+    let url = `http://localhost:3001/users?id=${userid}`
     const res = await fetch(url)
     const resUser = await res.json()
     setUser(resUser[0])
@@ -31,7 +31,7 @@ const Post = ({data}) => {
           <img src={user.avatar} alt="" />
           {/* <p>{user.name}</p> */}
           <p>
-           <Link to={`/profile/${user.username}`}>{user.username} </Link>
+           <Link to={`/profile/${user.id}`}>{user.username} </Link>
           </p>
         </div>
         <div className="option">
