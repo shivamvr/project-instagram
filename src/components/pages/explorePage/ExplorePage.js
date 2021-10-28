@@ -1,5 +1,6 @@
 import React, { useState,useEffect } from 'react'
 import styled from 'styled-components'
+import ExplorePost from './ExplorePost'
 
 
 const ExplorePage = () => {
@@ -21,6 +22,7 @@ const ExplorePage = () => {
     return (
      <StyledExplore>
         <StyledGrid>
+            {posts.map(post => <ExplorePost key={post.id} post={post}/>)}
         </StyledGrid>
      </StyledExplore>
     )
