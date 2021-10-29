@@ -1,10 +1,13 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import home from '../../../../../src/svg/home.svg'
+import activeHome from '../../../../../src/svg/activeHome.svg'
 import activity from '../../../../../src/svg/heart.svg'
 import explore from '../../../../../src/svg/explore.svg'
+import activeExplore from '../../../../../src/svg/activeExplore.svg'
 import chat from '../../../../../src/svg/chat.svg'
-import camera from '../../../../../src/svg/camera.svg'
+import activeChat from '../../../../../src/svg/activeChat.svg'
+import add from '../../../../../src/svg/add.svg'
 import SearchResult from './SearchResult'
 import CreatePostModal from './CreatePostModal'
 import ProfileOption from './ProfileOption'
@@ -18,7 +21,10 @@ const Navbar = () => {
   const [searchResultShow, setSearchResultShow] = useState(false)
   const [createClicked, setCreateClicked] =  useState(false)
   const [profileClicked, setProfileClicked] =  useState(false)
-
+  const [homeStatus,setHomeStatus] = useState(true)
+  const [chatStatus,setChatStatus] = useState(false)
+  const [exploreStatus,setExploreStatus] = useState(false)
+  
   const history = useHistory()
 
   // Handler
@@ -32,6 +38,28 @@ const Navbar = () => {
   const pageHandler = (path) => {
     history.push(path)
   }
+
+  const homeHandler = () => {
+    pageHandler('/')
+    setHomeStatus(true)
+    setChatStatus(false)
+    setExploreStatus(false)
+  }
+
+  const chatHandler = () => {
+    pageHandler('direct')
+    setHomeStatus(false)
+    setChatStatus(true)
+    setExploreStatus(false)
+  }
+
+  const exploreHandler = () => {
+    pageHandler('explore')
+    setHomeStatus(false)
+    setChatStatus(false)
+    setExploreStatus(true)
+  }
+  
   
 
   return (
@@ -62,10 +90,10 @@ const Navbar = () => {
       </SearchBar>
 
       <StlyedList>
-        <img onClick={()=>pageHandler('/')} src={home} alt="" />
-        <img onClick={()=>pageHandler('')} onClick={()=> setCreateClicked(!createClicked)} src={camera} alt="" />
-        <img onClick={()=>pageHandler('')} src={chat} alt="" />
-        <img onClick={()=>pageHandler('/explore')} src={explore} alt="" />
+        <img onClick={homeHandler} src={homeStatus ? activeHome : home} alt="" />
+        <img onClick={()=>setCreateClicked(!createClicked)} src={add} alt="" />
+        <img onClick={chatHandler} src={chatStatus ? activeChat : chat} alt="" />
+        <img onClick={exploreHandler} src={exploreStatus ? activeExplore : explore} alt="" />
         <img onClick={()=>pageHandler('')} src={activity} alt="" />
         <Avatar>
           <img onClick={()=> setProfileClicked(!profileClicked)} src={user.avatar} alt="" />

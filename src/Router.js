@@ -5,6 +5,7 @@ import HomePage from './components/pages/homePage/HomePage'
 import { useSelector } from 'react-redux'
 import LoginPage from './components/pages/loginPage/LoginPage'
 import ExplorePage from './components/pages/explorePage/ExplorePage'
+import MessagePage from './components/pages/messagePage/MessagePage'
 
 const Router = () => {
   const isAuth = useSelector((state) => state.isAuth)
@@ -22,6 +23,10 @@ const Router = () => {
 
             <Route path={'/explore'}>
               <ExplorePage />
+            </Route>
+
+            <Route path={'/direct'}>
+              <MessagePage />
             </Route>
 
             </Switch>
