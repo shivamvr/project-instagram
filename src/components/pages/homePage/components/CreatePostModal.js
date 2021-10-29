@@ -31,7 +31,7 @@ const CreatePostModal = ({ createClicked, setCreateClicked }) => {
     const post = {
       image: imageLink,
       text: caption,
-      userId: user.id,
+      userid: user.id,
       id: uuid(),
     }
     if (post.image) {

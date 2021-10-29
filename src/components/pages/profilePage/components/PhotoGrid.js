@@ -21,7 +21,7 @@ const PhotoGrid = ({userId}) => {
     return (
 
         <StyledGrid>
-            {posts.map(post => <Photo key={post.id} post={post}/>)}
+            {posts.map(post => <Photo userId={userId} key={post.id} post={post}/>)}
         </StyledGrid>
     )
 }

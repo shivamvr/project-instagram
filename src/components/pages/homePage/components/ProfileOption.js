@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import profile from '../../../../svg/profile.svg'
 import save from '../../../../svg/save.svg'
@@ -14,7 +14,8 @@ const ProfileOption = ({ profileClicked, setProfileClicked }) => {
   const dispatch = useDispatch()
 
   // User
-  const user = useSelector((state) => state.user)
+  // const user = useSelector((state) => state.user)
+
   // Handlers
   const exitHandler = (e) => {
     if (e.target.id === 'wraper') {

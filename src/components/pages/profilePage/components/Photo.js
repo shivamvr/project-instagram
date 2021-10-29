@@ -1,10 +1,27 @@
-import React from 'react'
+import React,{useState} from 'react'
 import styled from 'styled-components'
+import PostModal from './PostModal'
 
-const Photo = ({post}) => {
+const Photo = ({post,userId}) => {
+    const[user,setUser] = useState({})
+    const[postClicked,setPostClicked] = useState(false)
+
+     // Fecthing Posts 
+     const getUser = async () => {
+        let uri = `http://localhost:3001/users?id=${userId}`
+        const res = await fetch(uri)
+        const resUser = await res.json()
+        setUser(resUser[0])
+      }
+      const imgClickHandler = () => {
+          getUser()
+          setPostClicked(true)
+      }
+      
     return (
         <StyledPhoto>
-            <img src={post.image} alt="" />
+             {postClicked ? <PostModal user={user} post={post} postClicked={postClicked} setPostClicked={setPostClicked} />  : ''}
+            <img onClick={imgClickHandler} src={post.image} alt="" />
         </StyledPhoto>
     )
 }
@@ -20,6 +37,7 @@ color: #333;
     width: 100%;
     height: 100%;
     object-fit: cover;
+    cursor: pointer;
 }
 `
 export default Photo

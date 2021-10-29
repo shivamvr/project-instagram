@@ -1,8 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
+import PostInfo from '../../homePage/components/PostInfo'
+import PostReaction from '../../homePage/components/PostReaction'
+import UserBar from '../../homePage/components/UserBar'
 
-const PostModal = ({postClicked,setPostClicked}) => {
-
+const PostModal = ({setPostClicked,post,user}) => {
     // Handlers
   const exitHandler = (e) => {
     if (e.target.id === 'postModal') {
@@ -12,7 +14,17 @@ const PostModal = ({postClicked,setPostClicked}) => {
     return (
         <StyledModal id="postModal" onClick={exitHandler}>
         <Content>
-            
+            <div className='postPicture'>
+                <img src={post.image} alt="" />
+            </div>
+            <div className='postInfo'>
+                <UserBar user={user}/>
+                 <div className='comments'>
+                   Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugit nihil quia praesentium soluta cum impedit quibusdam excepturi obcaecati corrupti recusandae.
+                </div>
+                <PostInfo/>
+                <PostReaction/>
+            </div>
         </Content>
       </StyledModal>
     )
@@ -32,21 +44,37 @@ const StyledModal = styled.div`
 `
 
 const Content = styled.div`
-  width: 940px;
+  width: fit-content;
   height: 530px;
   display: flex;
+  justify-content: center;
+  align-items: center;
   border: solid 1px #ccc;
   border-radius: 0.5rem;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
   background: #fff;
-  padding: 2rem;
+  overflow: hidden;
   & > div {
     border: 1px solid purple;
-    padding: 1px;
-    margin-bottom: 2rem;
+}
+&>.postPicture{
+    width: fit-content;
+    height: 100%;
+    background: pink;
+    &>img{
+        height: 100%;
+        width: auto;
+    }
   }
-`
+  &>.postInfo{
+    width: 500px;
+    height: 100%;
+    padding: .5rem;
+    &>.comments{
+      width: 100%;
+      height: 220px;
+      background: #ccc;
+    }
+  }
+  `
 
 export default PostModal

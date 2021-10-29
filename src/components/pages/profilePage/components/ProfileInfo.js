@@ -48,7 +48,7 @@ const ProfileInfo = ({userId}) => {
         <Name>{user.name}</Name>
 
         <UserLink>
-          <a href="">bit.ly/lorem</a>
+          <a href='http://localhost:3000/'>bit.ly/lorem</a>
         </UserLink>
 
         <FollowBy>
