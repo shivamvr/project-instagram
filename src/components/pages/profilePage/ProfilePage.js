@@ -8,7 +8,6 @@ const ProfilePage = () => {
     const { id } = useParams();
     return (
         <StyledPage>
-            
             <ProfileInfo userId={id}/>
             <Posts userId={id}/>
         </StyledPage>

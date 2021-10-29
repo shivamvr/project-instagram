@@ -5,6 +5,8 @@ import PostReaction from '../../homePage/components/PostReaction'
 import UserBar from '../../homePage/components/UserBar'
 
 const PostModal = ({setPostClicked,post,user}) => {
+    console.log('modal user:', user)
+    console.log('modal post:', post)
     // Handlers
   const exitHandler = (e) => {
     if (e.target.id === 'postModal') {

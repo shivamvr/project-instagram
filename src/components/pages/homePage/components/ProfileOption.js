@@ -8,7 +8,7 @@ import { saveLoginDetail } from '../../../utils'
 // Action 
 import logout from '../../../../actions/logout'
 // Redux
-import { useSelector,useDispatch } from 'react-redux'
+import { useDispatch } from 'react-redux'
 
 const ProfileOption = ({ profileClicked, setProfileClicked }) => {
   const dispatch = useDispatch()

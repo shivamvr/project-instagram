@@ -47,14 +47,14 @@ const Navbar = () => {
   }
 
   const chatHandler = () => {
-    pageHandler('direct')
+    pageHandler('/direct')
     setHomeStatus(false)
     setChatStatus(true)
     setExploreStatus(false)
   }
 
   const exploreHandler = () => {
-    pageHandler('explore')
+    pageHandler('/explore')
     setHomeStatus(false)
     setChatStatus(false)
     setExploreStatus(true)

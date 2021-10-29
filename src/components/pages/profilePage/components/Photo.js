@@ -6,13 +6,14 @@ const Photo = ({post,userId}) => {
     const[user,setUser] = useState({})
     const[postClicked,setPostClicked] = useState(false)
 
-     // Fecthing Posts 
+     // Fecthing User 
      const getUser = async () => {
         let uri = `http://localhost:3001/users?id=${userId}`
         const res = await fetch(uri)
         const resUser = await res.json()
         setUser(resUser[0])
       }
+      
       const imgClickHandler = () => {
           getUser()
           setPostClicked(true)
