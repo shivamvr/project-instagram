@@ -30,10 +30,23 @@ const Navbar = () => {
   
   const history = useHistory()
 
+  const[users,setUsers] = useState([])
+
+    // Fecthing users 
+
+    const getUsers = async () => {
+        let uri = `http://localhost:3001/users`
+        const res = await fetch(uri)
+        const resUsers = await res.json()
+        setUsers(resUsers)
+      }
+
   // Handler
   const inputFocusHandler = () => {
     setSearchResultShow(true)
+    getUsers()
   }
+
   const inputBlurHandler = () => {
     setSearchResultShow(false)
   }
@@ -86,7 +99,7 @@ const Navbar = () => {
             <UpTriangle>
               <div></div>
             </UpTriangle>
-            <SearchResult />
+            <SearchResult users={users} />
           </>
         )}
 

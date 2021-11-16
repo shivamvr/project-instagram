@@ -2,14 +2,10 @@ import React from 'react'
 import styled from 'styled-components'
 import UserDetail from './UserDetail'
 
-const SearchResult = () => {
+const SearchResult = ({users}) => {
     return (
         <StyledResult>
-            <UserDetail/>
-            <UserDetail/>
-            <UserDetail/>
-            <UserDetail/>
-            <UserDetail/>
+            {users.map(user=> <UserDetail user={user} />)}
         </StyledResult>
     )
 }
@@ -20,7 +16,8 @@ position: absolute;
 top: 40px;
 left: -80px;
 width: 380px;
-height: 365px;
+min-height: 50px;
+max-height: 365px;
 background: #ccc;
 border-radius: .4rem;
 overflow-y: scroll;

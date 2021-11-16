@@ -1,14 +1,15 @@
 import React from 'react'
 import styled from 'styled-components'
-const UserDetail = () => {
+import { Link } from 'react-router-dom'
+const UserDetail = ({user}) => {
   return (
     <StyledDetail>
       <Avatar>
-        <img src="/image/avatar.jpg" alt="" />
+        <img src={user.avatar} alt="" />
       </Avatar>
-      <StyledUserDetail>
-        User name
-        <p>name</p>
+      <StyledUserDetail>           
+        <Link to={`/profile/${user.id}`}>{user.username} </Link>
+        <p>{user.name}</p>
       </StyledUserDetail>
     </StyledDetail>
   )
@@ -24,9 +25,12 @@ const StyledDetail = styled.div`
 `
 const Avatar = styled.div`
   width: 2.5rem;
+  height: 2.5rem;
   margin-right: .5rem;
   & >img {
     width: 100%;
+    height: 100%;
+    object-fit: cover;
     border-radius: 50%;
   }
 `
@@ -39,6 +43,9 @@ const StyledUserDetail = styled.div`
  display: flex;
  flex-direction: column;
  justify-content: center;
+ &>a:hover{
+   text-decoration: underline;
+ }
  &>p{
      color: #8e8e8e;
  }
