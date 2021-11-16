@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
+// Icons
 import home from '../../../../../src/svg/home.svg'
 import activeHome from '../../../../../src/svg/activeHome.svg'
 import activity from '../../../../../src/svg/heart.svg'
@@ -8,9 +9,11 @@ import activeExplore from '../../../../../src/svg/activeExplore.svg'
 import chat from '../../../../../src/svg/chat.svg'
 import activeChat from '../../../../../src/svg/activeChat.svg'
 import add from '../../../../../src/svg/add.svg'
+// Components
 import SearchResult from './SearchResult'
 import CreatePostModal from './CreatePostModal'
 import ProfileOption from './ProfileOption'
+// Router
 import { useHistory } from 'react-router'
 // Redux
 import { useSelector } from 'react-redux'
@@ -67,7 +70,7 @@ const Navbar = () => {
     <StyledNav>
       <div>
       <Logo>
-        <img src="/image/logo.png" alt="" />
+        <img onClick={homeHandler} src="/image/logo.png" alt="" />
       </Logo>
 
       <SearchBar>
@@ -128,6 +131,7 @@ const Logo = styled.div`
   width: 108px;
   margin-top: 0.5rem;
   margin-right: 19rem;
+  cursor: pointer;
   & > img {
     width: 100%;
   }
