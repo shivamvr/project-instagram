@@ -1,14 +1,35 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import save from './../../../../svg/save.svg'
 import like from './../../../../svg/heart.svg'
+import liked from './../../../../svg/liked.svg'
 import message from './../../../../svg/message.svg'
 import share from './../../../../svg/chat.svg'
-const PostReaction = () => {
+const PostReaction = ({likeStatus}) => {
+ 
+ const [isLiked, setIsLike] = useState(false)
+ const [iconScale, setIconScale] = useState(1)
+ // Handler
+
+ const likeHandler = (likeStatus) => {
+  setIsLike(!isLiked)
+  if(likeStatus === 'like'){
+    setIconScale(1.4)
+    setTimeout(()=>{
+      setIconScale(1)
+    },200)
+  }
+
+ }
+ 
+ 
     return (
         <StyledReaction>
         <div>
-          <img src={like} alt="" />
+          {likeStatus ? 
+          <img onClick={()=> likeHandler('unlike')}  src={liked} alt="" style={{transform: `scale(${iconScale})`}}/>:
+          <img onClick={()=>likeHandler('like')}  src={like} alt="" />
+          }
           <img src={message} alt="" />
           <img src={share} alt="" />
         </div>
@@ -44,11 +65,13 @@ const StyledReaction = styled.div`
   & > div > img {
     height: 100%;
     width: 30%;
+    cursor: pointer;
   }
   & > div + div > img {
     margin-right: 0rem;
     width: 100%;
   }
+ 
 `
 
 export default PostReaction

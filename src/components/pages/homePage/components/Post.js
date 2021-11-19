@@ -4,12 +4,18 @@ import smile from './../../../../svg/smile.svg'
 import UserBar from './UserBar'
 import PostReaction from './PostReaction'
 import PostInfo from './PostInfo'
+import { useSelector } from 'react-redux'
 
 const Post = ({data}) => {
-  const {image,text,userid} = data
+  const loggedUser = useSelector((state)=>state.user)
+  const loggedUserId = loggedUser.id
+  const {image,text,userid,id} = data
+
   // State 
   const[user,setUser]= useState({})
- 
+  const[likes,setLikes]= useState('')
+  const[likeStatus,setLikeStatus]= useState({})
+
   const getUser = async () => {
     let url = `http://localhost:3001/users?id=${userid}`
     const res = await fetch(url)
@@ -17,18 +23,43 @@ const Post = ({data}) => {
     setUser(resUser[0])
   }
 
+  const getLikeStatus = async () => {
+    let postId = await id
+    let userId = await loggedUserId
+    let url = `http://localhost:3001/likes?userid=${userId}&postid=${postId}`
+    const res = await fetch(url)
+    const resUser = await res.json()
+    setLikeStatus(resUser[0])
+  }
+
+
+  const getLikes = async () => {
+    let url = `http://localhost:3001/likes?postid=${id}`
+    const res = await fetch(url)
+    const resUser = await res.json()
+    if(resUser.length === 0){
+       setLikes('')
+    }else{
+      setLikes(resUser.length)
+
+    }
+  }
+
+ 
+  
   useEffect(()=>{
     getUser()
+    getLikes()
+    getLikeStatus()
   },[])
-  
   return (
     <StyledPost>
      <UserBar user={user}/>
       <PostImage>
         <img src={image} alt="" />
       </PostImage>
-      <PostReaction/>
-      <PostInfo text={text}/>
+      <PostReaction likeStatus={likeStatus}/>
+      <PostInfo text={text} likes={likes}/>
       <PostComment>
         <div>
           <img src={smile} alt="" />

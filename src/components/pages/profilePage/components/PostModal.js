@@ -5,8 +5,6 @@ import PostReaction from '../../homePage/components/PostReaction'
 import UserBar from '../../homePage/components/UserBar'
 
 const PostModal = ({setPostClicked,post,user}) => {
-    console.log('modal user:', user)
-    console.log('modal post:', post)
     // Handlers
   const exitHandler = (e) => {
     if (e.target.id === 'postModal') {
@@ -24,7 +22,7 @@ const PostModal = ({setPostClicked,post,user}) => {
                  <div className='comments'>
                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugit nihil quia praesentium soluta cum impedit quibusdam excepturi obcaecati corrupti recusandae.
                 </div>
-                <PostInfo/>
+                <PostInfo likes={post.likes} text={post.text}/>
                 <PostReaction/>
             </div>
         </Content>

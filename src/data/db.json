@@ -76,5 +76,19 @@
       "userid": "1",
       "id": "a9a58d73-1b87-4139-a438-8841f89559ee"
     }
+  ],
+  "likes":[
+    { "userid": "1",
+      "postid":"a9a58d73-1b87-4139-a438-8841f89559ee"
+    },
+    {
+      "userid": "1",
+      "postid": "one"
+    },
+    {
+      "userid": "2",
+      "postid": "two"
+    }
   ]
+ 
 }

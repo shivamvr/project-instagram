@@ -1,10 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const PostInfo = ({text}) => {
+const PostInfo = ({text,likes}) => {
     return (
         <StyledInfo>
-        <div className="post-likes">5,034 likes</div>
+        <div className="post-likes">{likes} likes</div>
         <div className="post-text">
           cares_one_no <span>{text}</span>
         </div>

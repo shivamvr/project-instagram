@@ -5,7 +5,7 @@ import UserDetail from './UserDetail'
 const SearchResult = ({users}) => {
     return (
         <StyledResult>
-            {users.map(user=> <UserDetail user={user} />)}
+            {users.map(user=> <UserDetail key={user.id} user={user} />)}
         </StyledResult>
     )
 }
