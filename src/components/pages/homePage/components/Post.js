@@ -11,13 +11,14 @@ const Post = ({data}) => {
   const loggedUserId = loggedUser.id
   const {image,text,userid,id} = data
 
+
   // State 
   const[user,setUser]= useState({})
   const[likes,setLikes]= useState('')
-  const[likeStatus,setLikeStatus]= useState({})
+  const[likeStatus,setLikeStatus]= useState([])
 
   const getUser = async () => {
-    let url = `http://localhost:3001/users?id=${userid}`
+    let url = `https://json-web.herokuapp.com/users?id=${userid}`
     const res = await fetch(url)
     const resUser = await res.json()
     setUser(resUser[0])
@@ -26,15 +27,15 @@ const Post = ({data}) => {
   const getLikeStatus = async () => {
     let postId = await id
     let userId = await loggedUserId
-    let url = `http://localhost:3001/likes?userid=${userId}&postid=${postId}`
+    let url = `https://json-web.herokuapp.com/likes?userid=${userId}&postid=${postId}`
     const res = await fetch(url)
     const resUser = await res.json()
-    setLikeStatus(resUser[0])
+    setLikeStatus(resUser)
   }
 
 
   const getLikes = async () => {
-    let url = `http://localhost:3001/likes?postid=${id}`
+    let url = `https://json-web.herokuapp.com/likes?postid=${id}`
     const res = await fetch(url)
     const resUser = await res.json()
     if(resUser.length === 0){
@@ -58,7 +59,7 @@ const Post = ({data}) => {
       <PostImage>
         <img src={image} alt="" />
       </PostImage>
-      <PostReaction likeStatus={likeStatus}/>
+      <PostReaction likeStatus={likeStatus.length} setLikeStatus={setLikeStatus}/>
       <PostInfo text={text} likes={likes}/>
       <PostComment>
         <div>

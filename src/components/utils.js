@@ -10,7 +10,7 @@ export const getDetail = (user) => {
 }
 
 export const getUser = async (enteredEmail,enteredPassword) => {
-    let url = `http://localhost:3001/users?email=${enteredEmail}&password=${enteredPassword}`
+    let url = `https://json-web.herokuapp.com/users?email=${enteredEmail}&password=${enteredPassword}`
     const res = await fetch(url)
     const resUser = await res.json()
     return await resUser[0]

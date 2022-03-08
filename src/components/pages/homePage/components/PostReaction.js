@@ -5,15 +5,16 @@ import like from './../../../../svg/heart.svg'
 import liked from './../../../../svg/liked.svg'
 import message from './../../../../svg/message.svg'
 import share from './../../../../svg/chat.svg'
-const PostReaction = ({likeStatus}) => {
- 
- const [isLiked, setIsLike] = useState(false)
- const [iconScale, setIconScale] = useState(1)
- // Handler
-
- const likeHandler = (likeStatus) => {
-  setIsLike(!isLiked)
-  if(likeStatus === 'like'){
+const PostReaction = ({likeStatus,setLikeStatus}) => {
+  
+  const [isLiked, setIsLiked] = useState(false)
+  const [iconScale, setIconScale] = useState(1)
+  // Handler
+  
+  const likeHandler = (isLike) => {
+    setIsLiked(!isLiked)
+    setLikeStatus(!isLiked) // temp
+  if(isLike === 'like'){
     setIconScale(1.4)
     setTimeout(()=>{
       setIconScale(1)

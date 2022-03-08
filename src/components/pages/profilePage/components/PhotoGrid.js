@@ -8,7 +8,7 @@ const PhotoGrid = ({userId}) => {
     // Fecthing Posts 
 
     const getPost = async () => {
-        let uri = `http://localhost:3001/posts?userid=${userId}`
+        let uri = `https://json-web.herokuapp.com/posts?userid=${userId}`
         const res = await fetch(uri)
         const resPosts = await res.json()
         setPosts(resPosts)

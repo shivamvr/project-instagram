@@ -8,7 +8,7 @@ const ExplorePost = ({post}) => {
     const[user,setUser] = useState({})
      // Fecthing User 
      const getUser = async () => {
-        let uri = await `http://localhost:3001/users?id=${post.userid}`
+        let uri = await `https://json-web.herokuapp.com/users?id=${post.userid}`
         const res = await fetch(uri)
         const resUser = await res.json()
         setUser(resUser[0])

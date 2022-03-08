@@ -8,7 +8,7 @@ const Photo = ({post,userId}) => {
 
      // Fecthing User 
      const getUser = async () => {
-        let uri = `http://localhost:3001/users?id=${userId}`
+        let uri = `https://json-web.herokuapp.com/users?id=${userId}`
         const res = await fetch(uri)
         const resUser = await res.json()
         setUser(resUser[0])

@@ -35,7 +35,7 @@ const Navbar = () => {
     // Fecthing users 
 
     const getUsers = async () => {
-        let uri = `http://localhost:3001/users`
+        let uri = `https://json-web.herokuapp.com/users`
         const res = await fetch(uri)
         const resUsers = await res.json()
         setUsers(resUsers)

@@ -35,7 +35,7 @@ const CreatePostModal = ({ createClicked, setCreateClicked }) => {
       id: uuid(),
     }
     if (post.image) {
-      await fetch('http://localhost:3001/posts', {
+      await fetch('https://json-web.herokuapp.com/posts', {
         method: 'POST',
         body: JSON.stringify(post),
         headers: { 'Content-Type': 'application/Json' },

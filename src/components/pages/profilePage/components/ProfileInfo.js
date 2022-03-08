@@ -4,10 +4,9 @@ import more from '../../../../svg/more.svg'
 import arrow from '../../../../svg/arrow.svg'
 const ProfileInfo = ({userId}) => {
   const [user,setUser] = useState({})
-  console.log('user:', user)
 
   const getUser = async() => {
-    const url = `http://localhost:3001/users?id=${userId}`
+    const url = `https://json-web.herokuapp.com/users?id=${userId}`
     const res = await fetch(url)
     const resUser = await res.json()
      setUser(resUser[0])
