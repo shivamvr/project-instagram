@@ -10,7 +10,7 @@ const RightPart = () => {
     // Fecthing Posts 
 
     const getPost = async () => {
-        let uri = 'http://localhost:3001/posts'
+        let uri = 'https://json-web.herokuapp.com/posts'
         const res = await fetch(uri)
         const resPosts = await res.json()
         setPosts(resPosts)
