@@ -74,7 +74,9 @@ const Post = ({data}) => {
 const StyledPost = styled.div`
   width: 100%;
   height: 1070px;
-  border: #ccc 1.5px solid;
+  border: #ccc .5px solid;
+  border-radius: .4rem;
+  box-shadow: 0px 0px 0px rgb(210, 210, 210) ;
   background: #fff;
   margin-top: 2rem;
 `

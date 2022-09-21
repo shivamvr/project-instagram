@@ -49,7 +49,7 @@ const Content = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  border: solid 1px #ccc;
+  /* border: solid 1px #ccc; */
   border-radius: 0.5rem;
   background: #fff;
   overflow: hidden;

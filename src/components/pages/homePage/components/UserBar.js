@@ -26,7 +26,7 @@ const StyledUserBar = styled.div`
   height: 65px;
   display: flex;
   justify-content: space-between;
-  border: solid 1px #ccc;
+  /* border: solid 1px #ccc; */
   border-radius: 0.2rem;
  
 
