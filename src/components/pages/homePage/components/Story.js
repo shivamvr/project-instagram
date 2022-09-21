@@ -15,7 +15,7 @@ const Story = () => {
 const StyledStory = styled.div`
 width: 80px;
 height: 85px;
-border: solid 1px #000;
+/* border: solid 1px #000;  */
 display: flex;
 flex-direction: column;
 align-items: center;

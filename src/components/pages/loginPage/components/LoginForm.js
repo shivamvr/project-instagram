@@ -78,7 +78,7 @@ const StyledForm = styled.div`
   padding: 1rem 2.5rem;
 
   & > input,
-  button {
+  button {  
     padding: 0.6rem 0.5rem;
     margin-bottom: 0.4rem;
     border-radius: 0.2rem;
@@ -110,7 +110,7 @@ const StyledForm = styled.div`
 
   & > p {
     color: #385185;
-    border: solid;
+    /* border: solid; */
     margin-top: 1rem;
     font-size: 90%;
   }
@@ -120,7 +120,7 @@ const StyledOr = styled.div`
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  border: solid red 1px;
+  /* border: solid red 1px; */
   width: 100%;
   margin-bottom: 2rem;
   & > div {
@@ -130,7 +130,7 @@ const StyledOr = styled.div`
   }
   & > p {
     font-size: 90%;
-    border: solid;
+    // border: solid;
     margin: 0 1rem;
     text-transform: uppercase;
     color: #8e8e8e;
@@ -138,7 +138,7 @@ const StyledOr = styled.div`
 `
 
 const Logo = styled.div`
-  border: 0.1rem solid gray;
+  /* border: 0.1rem solid gray; */
   display: flex;
   justify-content: center;
   width: 100%;

@@ -24,11 +24,11 @@ const LoggedProfile = () => {
 }
 const StyledProfile = styled.div`
   width: 100%;
-  border: pink 2px solid;
+  /* border: pink 2px solid; */
   display: flex;
   justify-content: space-between;
   &>div{
-      border: solid 1px #ccc;
+      /* border: solid 1px #ccc; */
   }
 `
 const Left = styled.div`

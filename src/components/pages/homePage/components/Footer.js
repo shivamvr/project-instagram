@@ -15,7 +15,6 @@ const StyledFooter = styled.div`
 font-size: 11px;
 font-weight: 400;
 color: #C7C7C7;
-border: solid;
 margin-top: 2rem;
 width: 100%;
 line-height: 1rem;

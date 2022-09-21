@@ -131,7 +131,7 @@ const StyledNav = styled.div`
    width: 100%;
    display: flex;
    align-items: center;
-   border: solid #ccc 1px;
+   /* border: solid #ccc 1px; */
    background: #fff;
    padding: 0.4rem 3.5rem;
    & > div {

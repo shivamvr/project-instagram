@@ -54,7 +54,7 @@ const Content = styled.div`
   background: #fff;
   overflow: hidden;
   & > div {
-    border: 1px solid purple;
+    border: 1px ;
 }
 &>.postPicture{
     width: fit-content;

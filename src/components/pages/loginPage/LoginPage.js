@@ -57,13 +57,13 @@ const StyledLogin = styled.div``
 
 const Container = styled.div`
   display: flex;
-  border: solid springgreen;
+  /* border: solid springgreen; */
   padding: 1rem;
   justify-content: center;
 
   .left-side,
   .right-side {
-    border: solid;
+    /* border: solid; */
     margin-top: 1rem;
   }
   .right-side {
@@ -74,12 +74,12 @@ const Container = styled.div`
 
   .left-side {
     width: 500px;
-    border: solid;
+    /* border: solid; */
     & > div {
       position: relative;
       & > img {
         width: 100%;
-        border: solid;
+        /* border: solid; */
       }
       & > div {
         position: absolute;
@@ -102,12 +102,11 @@ const StoreBtns = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: solid;
+  /* border: solid; */
   line-height: 3rem;
   color: #333;
 
   & > div {
-    border: solid;
     display: flex;
     width: 100%;
     justify-content: space-evenly;
@@ -123,7 +122,7 @@ const StyledFooter = styled.footer`
   flex-direction: column;
   align-items: center;
   word-spacing: 0.6rem;
-  border: solid;
+  /* border: solid; */
   color: #8e8e8e;
   font-size: 90%;
 `

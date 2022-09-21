@@ -91,7 +91,7 @@ const Content = styled.div`
   width: 600px;
   height: 500px;
   display: flex;
-  border: solid 1px #ccc;
+  /* border: solid 1px #ccc; */
   border-radius: 0.5rem;
   justify-content: center;
   flex-direction: column;
@@ -99,7 +99,7 @@ const Content = styled.div`
   background: #fff;
   padding: 2rem;
   & > div {
-    border: 1px solid purple;
+    /* border: 1px solid purple; */
     padding: 1px;
     margin-bottom: 2rem;
   }

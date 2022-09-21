@@ -71,7 +71,7 @@ const Content = styled.div`
   width: 230px;
   height: 195px;
   display: flex;
-  border: solid 1px #ccc;
+  /* border: solid 1px #ccc; */
   border-radius: 0.3rem;
   flex-direction: column;
   align-items: center;

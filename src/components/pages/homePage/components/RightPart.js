@@ -30,7 +30,7 @@ const RightPart = () => {
 const StyledRight = styled.div`
 width: 615px;
 min-height: 700vh;
-background: skyblue;
+/* background: skyblue; */
 margin-left: 3rem;
 `
 

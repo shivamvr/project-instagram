@@ -49,7 +49,7 @@ const StyledReaction = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border: solid #ccc 1px;
+  /* border: solid #ccc 1px; */
   padding: 1rem;
   margin-top: .4rem;
   & > div {

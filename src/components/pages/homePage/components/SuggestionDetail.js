@@ -19,7 +19,7 @@ const SuggestionDetail = () => {
 const StyledDetail = styled.div`
   width: 100%;
   height: 46px;
-  border: solid 1px #8e8e8e;
+  /* border: solid 1px #8e8e8e; */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -28,7 +28,7 @@ const StyledDetail = styled.div`
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    border: solid red 2px;
+    /* border: solid red 2px; */
     color: #262626;
     font-size: 14px;
     font-weight: 500;

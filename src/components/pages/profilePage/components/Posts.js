@@ -31,7 +31,7 @@ width: 100%;
 min-height: 100vh;
 `
 const Item = styled.div`
-border: solid 2px pink;
+/* border: solid 2px pink; */
 width: 100%;
 height: 52px;
 display: flex;

@@ -61,11 +61,11 @@ const ProfileInfo = ({userId}) => {
 const StyledProfile = styled.div`
   width: 100%;
   height: 230px;
-  border: solid;
+  /* border: solid; */
   display: flex;
   justify-content: center;
   & > div {
-    border: solid 1.5px blue;
+    /* border: solid 1.5px blue; */
   }
 `
 const ProfileLeft = styled.div`
@@ -85,7 +85,7 @@ const ProfileRight = styled.div`
 const Avatar = styled.div`
   width: 165px;
   height: 165px;
-  border: pink;
+  /* border: pink; */
   display: flex;
   background: linear-gradient(to right, #c53293, #f99c4b);
   justify-content: center;
@@ -106,13 +106,13 @@ const Avatar = styled.div`
 `
 const UserBar = styled.div`
   display: flex;
-  border: solid red 2px;
+  /* border: solid red 2px; */
   align-items: center;
   margin-top: 2rem;
   margin-bottom: 1rem;
   & > div {
     display: flex;
-    border: solid #ccc 2px;
+    /* border: solid #ccc 2px; */
     align-items: center;
   }
 `
@@ -149,7 +149,7 @@ const ProfileBtns = styled.div`
 `
 const UserInfo = styled.div`
   display: flex;
-  border: solid pink 2px;
+  /* border: solid pink 2px; */
   margin-bottom: 1rem;
   &>span{
    font-size: 1rem;

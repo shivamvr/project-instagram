@@ -19,12 +19,12 @@ const StyledInfo = styled.div`
   padding: 5px;
   font-size: 90%;
   & > div {
-    border: solid 1px blue;
+    /* border: solid 1px blue; */
     margin-bottom: 6px;
   }
   .post-likes {
     margin-bottom: 1rem;
-    background: pink;
+    /* background: pink; */
   }
   .post-text {
     font-weight: 500;

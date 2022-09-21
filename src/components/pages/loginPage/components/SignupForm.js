@@ -95,7 +95,7 @@ const StyledOr = styled.div`
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  border: solid red 1px;
+  /* border: solid red 1px; */
   width: 100%;
   margin-bottom: 2rem;
   & > div {

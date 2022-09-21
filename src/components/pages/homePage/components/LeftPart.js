@@ -19,7 +19,7 @@ const StyledLeft = styled.div`
 width: 330px;
 min-height: 600px;
 height: 90vh;
-background: pink;
+/* background: pink; */
 position: relative;
 margin-left: 1rem;
 
@@ -27,7 +27,7 @@ margin-left: 1rem;
     margin-top: 2.5rem;
     background: #fff;
     position: fixed;
-    border: .4rem solid;
+    /* border: .4rem solid; */
     width: 330px;
     height: 90vh;
     padding:  0 .3rem;

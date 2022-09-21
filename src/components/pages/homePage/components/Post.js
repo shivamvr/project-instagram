@@ -93,7 +93,7 @@ const PostComment = styled.div`
   width: 100%;
   height: 50px;
   display: flex;
-  border: solid #ccc 1px;
+  border:  1px;
   justify-content: space-between;
   align-items: center;
   padding: 0 0.8rem;

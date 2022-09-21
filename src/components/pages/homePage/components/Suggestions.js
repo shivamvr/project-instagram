@@ -22,11 +22,11 @@ const Suggestions = () => {
 }
 const StyledSuggestions = styled.div`
 width: 100%;
-border: solid;
+/* border: solid; */
 margin-top: .3rem;
 `
 const StyledHead = styled.div`
-border: solid blue;
+/* border: solid blue; */
 padding: 1rem 0;
 display: flex;
 font-size: 14px;
